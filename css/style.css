@@ -254,7 +254,7 @@ a {
     display: none;
   }
   .main_title {
-    font-style: 44px;
+    font-size: 44px;
   }
 }
 
@@ -317,7 +317,7 @@ a {
   display: grid;
 }
 
-.item_image{
+.item_image {
   text-align: center;
 }
 .item_image img {
@@ -344,7 +344,7 @@ a {
 }
 
 .item_price {
-  font-style: 14px;
+  font-size: 14px;
   line-height: 21px;
 }
 
@@ -369,13 +369,123 @@ a {
   .store_title {
     margin-bottom: 20px;
   }
-  .item_image:not(:last-child){
+  .item_image:not(:last-child) {
     margin-bottom: 20px;
   }
 }
 
 @media (max-width: 560px) {
   .body_store_items {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* -------------------------------------- */
+
+.categories {
+  padding-top: 90px;
+  padding-bottom: 110px;
+}
+
+.categories_title {
+  margin-bottom: 80px;
+}
+
+.categories_items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 70px;
+  row-gap: 35px;
+}
+
+.item_category {
+  position: relative;
+}
+
+.item_category_title {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 30px 20px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 600;
+  z-index: 3;
+  width: 100%;
+}
+
+.item_category:hover .item_category_image img {
+  transform: scale(1.1);
+}
+
+.item_category_image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+  padding-bottom: 127%;
+}
+
+.item_category_image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.item_category_image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  transition: all 0.3s ease 0s;
+}
+
+@media (max-width: 1230px) {
+  .categories_items {
+    column-gap: 40px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .categories {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .categories_title {
+    margin-bottom: 50px;
+  }
+  .categories_items {
+    column-gap: 30px;
+  }
+  .categories_items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .categories {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .categories_title {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 479.98px) {
+  .categories_items {
+    row-gap: 20px;
     grid-template-columns: repeat(1, 1fr);
   }
 }
