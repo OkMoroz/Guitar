@@ -1,2 +1,2 @@
-# Guitars
+# Guitar
 Макет "Guitar Website" 
